@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ders5-mysql-temel", "ders5-mysql-temel\ders5-mysql-temel.csproj", "{132B3CAA-6D14-4DBC-ADA8-50EC2A432C53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{132B3CAA-6D14-4DBC-ADA8-50EC2A432C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132B3CAA-6D14-4DBC-ADA8-50EC2A432C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132B3CAA-6D14-4DBC-ADA8-50EC2A432C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132B3CAA-6D14-4DBC-ADA8-50EC2A432C53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
