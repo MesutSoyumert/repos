@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <Folder Include="Concrete\EntityFramework\" />
   </ItemGroup>
 
   <ItemGroup>

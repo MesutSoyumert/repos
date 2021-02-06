@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
+using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,9 @@ namespace Business.Concrete
 
         public List<Product> GetAll()
         {
-            // İş kuralları
-            // Yetkisi var mı?
+            //İş Kuralları
+            //Yetkisi var mı?
             return _productDal.GetAll();
-        }
-
-        public List<Product> GetAllByCategoryID(int id)
-        {
-            return _productDal.GetAll(p => p.CategoryId == id);
         }
     }
 }
