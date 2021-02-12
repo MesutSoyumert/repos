@@ -22,12 +22,12 @@ namespace DataAccess.Concrete.InMemory
             new Product{ProductId=5, CategoryId=2, ProductName="Fare", UnitPrice=85, UnitsInStock=1},
             };
         }
-        public void add(Product product)
+        public void Add(Product product)
         {
             _products.Add(product);
         }
 
-        public void delete(Product product)
+        public void Delete(Product product)
         {
             //LİNQ Language Integrated Query kullanırız
             // => lambda
@@ -42,7 +42,7 @@ namespace DataAccess.Concrete.InMemory
             return _products;
         }
 
-        public void update(Product product)
+        public void Update(Product product)
         {
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
