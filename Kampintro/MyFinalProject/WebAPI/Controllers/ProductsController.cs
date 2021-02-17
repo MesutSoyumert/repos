@@ -1,4 +1,7 @@
-﻿using Entities.Concrete;
+﻿using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,15 +15,49 @@ namespace WebAPI.Controllers
     [ApiController] //ATTRIBUTE (Javada Annotation)
     public class ProductsController : ControllerBase
     {
+        //Loosely coupled
+        //naming convention
+        // IoC Container -- Inversion of Control
+        IProductService _productService;
 
-        [HttpGet]
-        public List<Product> Get()
+        public ProductsController(IProductService productService)
         {
-            return new List<Product>
+            _productService = productService;
+        }
+
+        [HttpGet("getall")]
+        public IActionResult GetAll()
+        {
             {
-                new Product{ProductId = 1, ProductName = "Elma"},
-                new Product{ProductId = 2, ProductName = "Armut"}
-            };
+                // Swagger API dokümantasyonu oluşturur
+                // Burada Dependency Chain var
+                var result = _productService.GetAll();
+                if (result.Success)
+                {
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+        }
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _productService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpPost("add")]
+        public IActionResult Add(Product product)
+        {
+            var result = _productService.Add(product);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
     }
 }
