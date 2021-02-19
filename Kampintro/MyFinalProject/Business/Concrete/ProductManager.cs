@@ -24,7 +24,13 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            // business rules burada kontrol edilir
+            // business rules burada kontrol edilir, iş gereksinimlerine uygunluk
+            // validation - nesne yapısal olarak doğru mu?
+
+            if (product.UnitPrice <=0)
+            {
+                return new ErrorResult(Messages.UnitPriceInvalid);
+            }
 
             if (product.ProductName.Length < 2) 
             {
